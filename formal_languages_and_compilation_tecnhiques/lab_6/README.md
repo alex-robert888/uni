@@ -19,6 +19,7 @@ I created a class for the Finite Automata, with the following state:
 * final_states: a set of strings representing the final sates of the FA (which should be present in the set of states)
 * transitions: a dictionary represing the set of transactions. The dictionary maps the source states to their destination states, together with input leading to that destination state. More precisely, we have a dictionary of dictionaries, in which the inner dictionary maps the inputs to the list of destination states and the wrapper dictionary maps the source states to that inner dictionary (holding the inputs and destination states).
 
+An example of transitions representation:
 {
        A: {
               0: [A],
@@ -33,6 +34,11 @@ I created a class for the Finite Automata, with the following state:
               1: [A, C]
        }
 }
+
+## Examples of Finite Automata
+
+![image](https://user-images.githubusercontent.com/52594991/141483903-9eeefbc8-d984-47c2-a61d-c0ebeffed82c.png)
+
 
 ## Input File Specified in EBNF
 
