@@ -1,5 +1,19 @@
 # Finite Automata
 
+## Statement
+
+Write a program that:
+
+1. Reads the elements of a FA (from file)
+
+2. Displays the elements of a finite automata, using a menu: the set of states, the alphabet, all the transitions, the set of final states.
+
+3. For a DFA, verify if a sequence is accepted by the FA.
+
+## Finite Automata Model
+
+
+
 ## Input File Specified in EBNF
 
 letter ::= "A" | "B" | "C" | "D" | "E" | "F" | "G"
