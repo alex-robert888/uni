@@ -7,7 +7,7 @@ class FiniteAutomata:
         self.alphabet = set()
         self.initial_state = set()
         self.final_states = set()
-        self.transitions = defaultdict(list)
+        self.transitions = defaultdict(dict)
 
     def is_sequence_accepted(self, sequence: str) -> bool:
         return True
@@ -35,4 +35,4 @@ class FiniteAutomata:
     def __load_transitions(self, f):
         while transition := f.readline().split():
             source, destination, input_value = transition[0], transition[1], transition[2]
-            self.transitions[input_value].append((source, destination))
+            self.transitions[source][input_value] = destination

@@ -15,8 +15,6 @@ class Application(object):
             except (AssertionError, ValueError):
                 print("Invalid option! Please choose a number between 0 and 6.")
 
-
-
     def __initialize_main_menu(self):
         self.__main_menu = [
             "Quit the application.",
