@@ -24,7 +24,7 @@ state ::= identifier;
 
 states ::= {state};
 
-input_value ::= identifier;
+input_value ::= character;
 
 alphabet ::= {input_value};
 
