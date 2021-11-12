@@ -52,11 +52,23 @@ class FiniteAutomata:
 
     def __load_initial_state(self, f):
         self.initial_state = f.readline().split()[0]
+        if self.initial_state not in self.states:
+            raise Exception('Initial state is not a valid state!')
 
     def __load_final_states(self, f):
         self.final_states = f.readline().split()
+        for state in self.final_states:
+            if state not in self.states:
+                raise Exception(f"Final state {state} is not a valid state!")
 
     def __load_transitions(self, f):
         while transition := f.readline().split():
             source, destination, input_value = transition[0], transition[1], transition[2]
+            if source not in self.states:
+                raise Exception(f"Source state {source} is not a valid state!")
+            if destination not in self.states:
+                raise Exception(f"Source state {destination} is not a valid state!")
+            if input_value not in self.alphabet:
+                raise Exception(f"Source state {input_value} is not a valid input!")
+
             self.transitions[source][input_value].append(destination)
