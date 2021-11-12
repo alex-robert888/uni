@@ -12,7 +12,27 @@ Write a program that:
 
 ## Finite Automata Model
 
+I created a class for the Finite Automata, with the following state:
+* states: set of strings representing the states of the FA
+* alphabet: set of strings representing the alphabet (set of inputs) of the FA
+* initial_state: a string representing the initial state of the FA (which should be present in the set of states)
+* final_states: a set of strings representing the final sates of the FA (which should be present in the set of states)
+* transitions: a dictionary represing the set of transactions. The dictionary maps the source states to their destination states, together with input leading to that destination state. More precisely, we have a dictionary of dictionaries, in which the inner dictionary maps the inputs to the list of destination states and the wrapper dictionary maps the source states to that inner dictionary (holding the inputs and destination states).
 
+{
+       A: {
+              0: [A],
+              1: [B, C]
+       },
+       B: {
+              0: [C],
+              1: [A]
+       },
+       C: {
+              0: [C],
+              1: [A, C]
+       }
+}
 
 ## Input File Specified in EBNF
 
