@@ -1,5 +1,5 @@
 import sys
-from finite_automata import FiniteAutomata
+from finite_automata import FiniteAutomaton
 
 
 class Application(object):
@@ -27,7 +27,7 @@ class Application(object):
         ]
 
     def __initialize_finite_automata(self):
-        self.__finite_automata = FiniteAutomata()
+        self.__finite_automata = FiniteAutomaton()
         self.__finite_automata.load()
 
     def __print_menu(self):
@@ -59,6 +59,9 @@ class Application(object):
             return "The specified FA is NOT a DFA."
 
         sequence = input("Enter sequence: ")
+        if sequence == "":
+            return "Sequence accepted."
+
         if self.__finite_automata.is_sequence_accepted(sequence):
             return "Sequence accepted."
         return "Sequence NOT accepted."

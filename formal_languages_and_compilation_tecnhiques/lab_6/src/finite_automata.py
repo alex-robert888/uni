@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 
-class FiniteAutomata:
+class FiniteAutomaton:
     def __init__(self):
         self.states = set()
         self.alphabet = set()
