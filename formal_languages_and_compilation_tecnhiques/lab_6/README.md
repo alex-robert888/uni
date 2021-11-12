@@ -35,7 +35,7 @@ An example of transitions representation:
        }
 }
 
-## Examples of Finite Automata
+## Examples of Finite Automata (resources/dfa-starting-with-0.in)
 
 ![image](https://user-images.githubusercontent.com/52594991/141483903-9eeefbc8-d984-47c2-a61d-c0ebeffed82c.png)
 
