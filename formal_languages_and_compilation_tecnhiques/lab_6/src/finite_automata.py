@@ -38,6 +38,9 @@ class FiniteAutomaton:
         return True
 
     def is_sequence_accepted(self, sequence: str) -> bool:
+        if sequence == "" and self.initial_state in self.final_states:
+            return True
+
         state = self.initial_state
         for input_value in sequence:
             if input_value not in self.alphabet:

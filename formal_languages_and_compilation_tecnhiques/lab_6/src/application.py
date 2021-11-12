@@ -59,9 +59,6 @@ class Application(object):
             return "The specified FA is NOT a DFA."
 
         sequence = input("Enter sequence: ")
-        if sequence == "":
-            return "Sequence accepted."
-
         if self.__finite_automata.is_sequence_accepted(sequence):
             return "Sequence accepted."
         return "Sequence NOT accepted."
