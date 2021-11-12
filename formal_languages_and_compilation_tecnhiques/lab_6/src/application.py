@@ -48,19 +48,19 @@ class Application(object):
         elif command == 3:
             print(self.__finite_automata.alphabet)
         elif command == 4:
-            print(self.__finite_automata.transitions)
+            print(self.__finite_automata.transitions_to_string())
         elif command == 5:
             print(self.__finite_automata.final_states)
         elif command == 6:
             print(self.__perform_sequence_acceptance_check())
 
-    def __perform_sequence_acceptance_check(self):
+    def __perform_sequence_acceptance_check(self) -> str:
         sequence = input("Enter sequence: ")
         if self.__finite_automata.is_sequence_accepted(sequence):
-            return "Sequence NOT accepted."
-        return "Sequence accepted."
+            return "Sequence accepted."
+        return "Sequence NOT accepted."
 
-    def __read_command(self):
+    def __read_command(self) -> int:
         command = int(input("Enter option: "))
         assert 0 <= command <= len(self.__main_menu)
         return command

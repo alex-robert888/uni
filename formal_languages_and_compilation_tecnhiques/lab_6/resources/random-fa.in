@@ -3,11 +3,16 @@ A B C D E
 A
 D E
 A B 0
+A C 0
 A C 1
 B A 0
 B C 1
+C A 0
+C B 1
 C D 0
 C E 1
-D E 0
+D E 1
 E C 0
+E D 1
 E E 1
+
