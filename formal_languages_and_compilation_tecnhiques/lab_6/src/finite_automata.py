@@ -17,15 +17,30 @@ class FiniteAutomata:
         self.__load_final_states(f)
         self.__load_transitions(f)
 
-    def transitions_to_string(self):
+    def transitions_to_string(self) -> str:
+        output = ""
         for state_name, state_dict in self.transitions.items():
             for input_value, list_of_destinations in state_dict.items():
                 list_of_destinations_to_string = ' '.join([str(destination) for destination in list_of_destinations])
-                print(f"{state_name} ({input_value})-> {list_of_destinations_to_string}")
+                output += f"{state_name} ({input_value})-> {list_of_destinations_to_string}\n"
+        return output
+
+    def is_deterministic(self) -> bool:
+        for state_name, state_dict in self.transitions.items():
+            input_values = state_dict.keys()
+            if len(input_values) != len(self.alphabet) or len(input_values) != len(set(input_values)):
+                return False
+
+            for input_value, list_of_destinations in state_dict.items():
+                if len(list_of_destinations) != 1:
+                    return False
+        return True
 
     def is_sequence_accepted(self, sequence: str) -> bool:
         state = self.initial_state
         for input_value in sequence:
+            if input_value not in self.alphabet:
+                return False
             state = self.transitions[state][input_value][0]
         return state in self.final_states
 

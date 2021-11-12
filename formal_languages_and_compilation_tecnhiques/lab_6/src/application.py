@@ -55,6 +55,9 @@ class Application(object):
             print(self.__perform_sequence_acceptance_check())
 
     def __perform_sequence_acceptance_check(self) -> str:
+        if not self.__finite_automata.is_deterministic():
+            return "The specified FA is NOT a DFA."
+
         sequence = input("Enter sequence: ")
         if self.__finite_automata.is_sequence_accepted(sequence):
             return "Sequence accepted."
