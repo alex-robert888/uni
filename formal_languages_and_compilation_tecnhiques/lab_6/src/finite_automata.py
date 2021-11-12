@@ -45,7 +45,7 @@ class FiniteAutomaton:
         for input_value in sequence:
             if input_value not in self.alphabet:
                 return False
-            state = self.transitions[state][input_value][0]
+            state = list(self.transitions[state][input_value])[0]
         return state in self.final_states
 
     def __load_states(self, f):
