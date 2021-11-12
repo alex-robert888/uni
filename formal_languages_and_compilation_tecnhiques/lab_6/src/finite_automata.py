@@ -7,7 +7,7 @@ class FiniteAutomaton:
         self.alphabet = set()
         self.initial_state = None
         self.final_states = set()
-        self.transitions = defaultdict(lambda: defaultdict(list))
+        self.transitions = defaultdict(lambda: defaultdict(set))
 
     def load(self):
         f = open("../resources/dfa-starting-with-0.in", "r")
@@ -28,6 +28,7 @@ class FiniteAutomaton:
     def is_deterministic(self) -> bool:
         for state_name, state_dict in self.transitions.items():
             input_values = state_dict.keys()
+
             if len(input_values) != len(self.alphabet) or len(input_values) != len(set(input_values)):
                 return False
 
@@ -71,4 +72,4 @@ class FiniteAutomaton:
             if input_value not in self.alphabet:
                 raise Exception(f"Source state {input_value} is not a valid input!")
 
-            self.transitions[source][input_value].append(destination)
+            self.transitions[source][input_value].add(destination)
