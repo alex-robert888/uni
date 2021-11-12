@@ -1,4 +1,4 @@
-# Finite Automata
+# Laboratory 4
 
 ## Statement
 
