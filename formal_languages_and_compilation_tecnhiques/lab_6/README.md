@@ -19,13 +19,21 @@ symbol ::= "[" | "]" | "{" | "}" | "(" | ")" | "<" | ">"
 character ::= letter | digit | symbol | "_" ;
 
 identifier ::= {character};
+
 state ::= identifier;
+
 states ::= {state};
+
 input_value ::= identifier;
+
 alphabet ::= {input_value};
+
 initial_state ::= identifier;
+
 final_states ::= {identifier};
+
 transition ::= state, state, input_value;
+
 transitions ::= {"\n", transition};
 
 input_file ::= states, "\n", alphabet, "\n", initial_state, "\n", final_states, transitions;
